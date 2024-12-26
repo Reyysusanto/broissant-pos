@@ -8,7 +8,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const LayoutDashboard = ({children}: {children: ReactNode}) => {
+const LayoutDashboard = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const currentDate = new Date();
   const formatDate = currentDate.toLocaleDateString("id-ID", {
@@ -23,13 +23,13 @@ const LayoutDashboard = ({children}: {children: ReactNode}) => {
   };
 
   return (
-    <div className={`flex min-h-screen w-full flex-col bg-muted/40 ${inter.className}`}>
+    <div
+      className={`flex min-h-screen w-full flex-col bg-muted/40 ${inter.className}`}
+    >
       <nav className="flex justify-center">
         <div className="container pt-2 px-6 flex justify-between items-center">
           <div className="flex flex-col items-start">
-            <h1 className="text-2xl font-bold text-primaryColor">
-              Broissant
-            </h1>
+            <h1 className="text-2xl font-bold text-primaryColor">Broissant</h1>
             <p className="text-gray-600">{formatDate}</p>
           </div>
 
@@ -45,22 +45,40 @@ const LayoutDashboard = ({children}: {children: ReactNode}) => {
         {isOpen && (
           <div className="md:hidden bg-white px-4 pt-2 pb-4 space-y-2 border-t-2 border-gray-200">
             <Link
-              href="/"
+              href="/dashboard/home"
               className="block text-gray-700 hover:text-primaryColor"
             >
               Home
             </Link>
             <Link
-              href="/about"
+              href="/dashboard/discounts"
               className="block text-gray-700 hover:text-primaryColor"
             >
-              About
+              Discounts
             </Link>
             <Link
-              href="/contact"
+              href="/dashboard/data"
               className="block text-gray-700 hover:text-primaryColor"
             >
-              Contact
+              Data
+            </Link>
+            <Link
+              href="/dashboard/mail"
+              className="block text-gray-700 hover:text-primaryColor"
+            >
+              Mail
+            </Link>
+            <Link
+              href="/dashboard/notification"
+              className="block text-gray-700 hover:text-primaryColor"
+            >
+              Notification
+            </Link>
+            <Link
+              href="/dashboard/settings"
+              className="block text-gray-700 hover:text-primaryColor"
+            >
+              Settings
             </Link>
           </div>
         )}

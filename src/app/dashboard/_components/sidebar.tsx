@@ -20,8 +20,6 @@ import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
   const currentPath = usePathname();
-
-  // Function to determine if the link is active
   const isActive = (path: string) => currentPath === path;
 
   return (
@@ -42,8 +40,8 @@ export default function Sidebar() {
                 href="/dashboard/home"
                 className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-foreground md:h-8 md:w-8 ${
                   isActive("/dashboard/home")
-                    ? "bg-orange-500 text-white" // Style for active item
-                    : "bg-transparent text-gray-400" // Default style
+                    ? "bg-orange-500 text-white"
+                    : "bg-transparent text-gray-400"
                 }`}
               >
                 <Home className="h-5 w-5" />
