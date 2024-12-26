@@ -169,7 +169,7 @@ const HomePage = () => {
 
   return (
     <div className="flex">
-      <div className="w-full md:w-2/3 px-6 pb-6">
+      <div className="w-full md:w-2/3 pb-6 pr-6">
         <div className="flex justify-between items-center">
           <div className="w-full relative md:w-1/3">
             <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />

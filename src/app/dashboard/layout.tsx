@@ -24,8 +24,8 @@ const LayoutDashboard = ({children}: {children: ReactNode}) => {
 
   return (
     <div className={`flex min-h-screen w-full flex-col bg-muted/40 ${inter.className}`}>
-      <nav>
-        <div className="container mx-auto pt-2 flex justify-between items-center">
+      <nav className="flex justify-center">
+        <div className="container pt-2 px-6 flex justify-between items-center">
           <div className="flex flex-col items-start">
             <h1 className="text-2xl font-bold text-primaryColor">
               Broissant
@@ -67,7 +67,7 @@ const LayoutDashboard = ({children}: {children: ReactNode}) => {
       </nav>
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
         <Sidebar />
-        <div className="py-4">{children}</div>
+        <div className="py-4 px-6">{children}</div>
       </div>
     </div>
   );
