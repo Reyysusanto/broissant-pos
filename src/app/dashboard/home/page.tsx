@@ -95,6 +95,7 @@ const HomePage = () => {
   const [userName, setUserName] = useState("Guest");
   const [selectMethod, setSelectMethod] = useState("");
   const [notes, setNotes] = useState<Record<number, string>>({});
+  
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -211,7 +212,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="hidden md:block p-4 w-1/3 bg-secondaryColor right-0 top-0 h-screen fixed">
+      <div className="hidden md:block p-4 w-1/3 bg-secondaryColor right-0 top-0 h-full fixed">
         <h4 className="text-lg font-semibold text-white">
           Order <span className="text-primaryColor">{userName}</span>
         </h4>
