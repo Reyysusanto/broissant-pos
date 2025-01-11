@@ -14,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { motion } from "framer-motion";
 
 const Method = [
   {
@@ -171,7 +172,12 @@ const HomePage = () => {
   return (
     <div className="flex">
       <div className="w-full md:w-2/3 pb-6 pr-6">
-        <div className="flex justify-between items-center">
+      <motion.div
+          className="flex justify-between items-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="w-full relative md:w-1/3">
             <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <Input
@@ -182,7 +188,7 @@ const HomePage = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-        </div>
+        </motion.div>
         <div className="flex items-center mt-6 justify-between">
           <h3 className="text-lg font-semibold text-gray-700">Choose Dishes</h3>
           <Select onValueChange={(value) => setSelectMethod(value)}>
@@ -198,7 +204,12 @@ const HomePage = () => {
             </SelectContent>
           </Select>
         </div>
-        <div className="flex flex-wrap gap-6 mt-4 justify-center">
+        <motion.div
+          className="flex flex-wrap gap-6 mt-4 justify-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           {filteredMenu.map((menu) => (
             <CardMenu
               key={menu.id}
@@ -209,7 +220,7 @@ const HomePage = () => {
               handleBuy={() => handleBuy(menu.id)}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <div className="hidden md:block p-4 w-1/3 bg-secondaryColor right-0 top-0 h-full fixed">
